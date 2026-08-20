@@ -1,0 +1,19 @@
+<UserControl x:Class="ChatStudents_Shapovalov.Pages.Items.User"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:local="clr-namespace:ChatStudents_Shapovalov.Pages.Items"
+             mc:Ignorable="d"
+             MouseUp="SelectChat">
+    <Grid Height="50" Margin="0,0,0,5">
+        <Image x:Name="imgUser" Margin="10, 0, 0, 0" Width="30" Height="30" HorizontalAlignment="Left" Source="/Images/ic-user.png" >
+            <Image.Clip>
+                <RectangleGeometry RadiusX="15" RadiusY="15" Rect="0,0,30,30"/>
+            </Image.Clip>
+        </Image>
+        <Image Width="10" Height="10" Margin="30, 30, 0, 0" HorizontalAlignment="Left" Source="/Images/ic-online.png" Visibility="Hidden"/>
+        <Label x:Name="FIO" Content="Иванов Иван Иванович" Margin="45, 0, 0, 0" VerticalAlignment="Top" FontWeight="Bold" FontSize="10"/>
+        <Label Content="..." Margin="45, 26, 0, 0" VerticalAlignment="Top" FontSize="10"/>
+    </Grid>
+</UserControl>
