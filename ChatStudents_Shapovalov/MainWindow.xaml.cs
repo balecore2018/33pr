@@ -1,24 +1,28 @@
-﻿using System.Text;
+using ChatStudents_Shapovalov.Models;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace ChatStudents_Shapovalov
 {
-    /// <summary>
-    /// Interaction logic for MainWindow.xaml
-    /// </summary>
     public partial class MainWindow : Window
     {
+        /// <summary>Ссылка на главное окно</summary>
+        public static MainWindow Instance;
+
+        /// <summary>Авторизированный пользователь</summary>
+        public Users LoginUser = null;
+
         public MainWindow()
         {
             InitializeComponent();
+            Instance = this;
+            // Открываем страницу авторизации
+            OpenPages(new Pages.Login());
         }
+
+        /// <summary>Метод открытия страниц</summary>
+        public void OpenPages(Page page) =>
+            // Открываем страницу
+            frame.Navigate(page);
     }
 }
